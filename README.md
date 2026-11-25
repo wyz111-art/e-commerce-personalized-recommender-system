@@ -26,6 +26,14 @@
   <img src="assets/dashboard.png" alt="电商用户行为与推荐分析看板" width="100%">
 </p>
 
+## 推荐工作台预览
+
+推荐工作台支持输入匿名用户 ID，查看推荐截点前的历史行为，并切换 User-CF、改进版 Item-CF 和两路融合三种推荐结果；后续实际购买会单独标记用于离线核对。
+
+<p align="center">
+  <img src="assets/recommendation-workbench.png" alt="匿名访客个性化推荐工作台" width="100%">
+</p>
+
 ## 数据与时间边界
 
 项目使用 Retailrocket 电商行为数据。事件类型包括浏览（view）、加购（cart）和购买（purchase）。原始用户和商品标识匿名，不将匿名属性解释成真实商品名称、品牌或价格。

@@ -1,0 +1,7 @@
+"pre_purchase_signal_segment","has_pretest_user_history","purchase_session_count","purchase_user_count","purchase_event_count","session_purchased_product_count","avg_pre_purchase_events","avg_pre_purchase_products"
+购买前有浏览和加购,1,1641,982,1917,1794,5.854966,2.625228
+购买前有浏览和加购,0,494,360,603,552,5.633603,2.542510
+购买前只有浏览,1,18,18,20,19,4.277777,2.555555
+购买前只有浏览,0,3,3,3,3,1.000000,1.000000
+购买前只有加购,1,1,1,1,1,1.000000,1.000000
+购买前无浏览和加购,1,5,5,5,5,0.000000,0.000000

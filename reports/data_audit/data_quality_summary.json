@@ -1,0 +1,56 @@
+{
+  "input": "D:\\user_behavior\\sampled\\events_2019_09_10_1pct.parquet",
+  "schema": {
+    "event_time": "String",
+    "event_type": "String",
+    "product_id": "Int64",
+    "category_id": "Int64",
+    "category_code": "String",
+    "brand": "String",
+    "price": "Float64",
+    "user_id": "Int64",
+    "user_session": "String",
+    "source_file": "String"
+  },
+  "overall": {
+    "rows": 1095077,
+    "users": 53425,
+    "sessions": 229075,
+    "products": 83392,
+    "min_event_at": "2019-10-01 00:08:55",
+    "max_event_at": "2019-11-30 23:58:29",
+    "source_files": 2
+  },
+  "exact_duplicate_rows": 1335,
+  "invalid_event_types": 0,
+  "session_ids_shared_by_multiple_users": 13,
+  "category_ids_with_multiple_codes": 0,
+  "products_with_metadata_conflicts": 42,
+  "user_metrics": {
+    "users": 53425,
+    "one_session_users": 22749,
+    "two_session_users": 9020,
+    "three_plus_session_users": 21656,
+    "purchase_users": 7050,
+    "cross_month_users": 14098,
+    "median_sessions_per_user": 2.0,
+    "median_events_per_user": 5.0
+  },
+  "session_metrics": {
+    "sessions": 229075,
+    "purchase_sessions": 14149,
+    "single_event_sessions": 81365,
+    "median_events_per_session": 2.0,
+    "median_products_per_session": 1.0,
+    "median_session_duration": "0:01:02",
+    "p99_session_duration": "1:22:11"
+  },
+  "product_metrics": {
+    "products": 83392,
+    "purchased_products": 4897,
+    "single_purchase_products": 3149,
+    "cross_month_products": 30231,
+    "median_events_per_product": 3.0
+  },
+  "elapsed_seconds": 2.897
+}

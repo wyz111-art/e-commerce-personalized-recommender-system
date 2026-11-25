@@ -1,0 +1,2 @@
+non_null_prices,null_prices,negative_prices,zero_prices,min_price,p01_price,p25_price,median_price,p75_price,p99_price,max_price
+1095077,0,0,2421,0.0,5.77,67.44,164.74,360.11,1691.16,2574.07

@@ -1,0 +1,53 @@
+{
+  "inputs": [
+    "D:\\user_behavior\\archive\\2019-Nov.csv",
+    "D:\\user_behavior\\archive\\2019-Oct.csv"
+  ],
+  "output": "D:\\user_behavior\\sampled\\events_2019_09_10_1pct.parquet",
+  "sampling": {
+    "method": "user_id modulo buckets",
+    "requested_percent": 1.0,
+    "buckets": 10000,
+    "selected_buckets": 100,
+    "effective_percent": 1.0
+  },
+  "summary": {
+    "rows": 1095077,
+    "users": 53425,
+    "products": 83392,
+    "sessions": 229062,
+    "min_event_time": "2019-10-01 00:08:55 UTC",
+    "max_event_time": "2019-11-30 23:58:29 UTC"
+  },
+  "purchase_rows": 16664,
+  "purchase_event_share": 0.015217194772605032,
+  "purchase_summary": {
+    "purchase_users": 7050,
+    "purchase_sessions": 14149,
+    "purchased_products": 4897
+  },
+  "event_counts": [
+    {
+      "event_type": "view",
+      "rows": 1038948
+    },
+    {
+      "event_type": "cart",
+      "rows": 39465
+    },
+    {
+      "event_type": "purchase",
+      "rows": 16664
+    }
+  ],
+  "source_counts": [
+    {
+      "source_file": "2019-Nov.csv",
+      "rows": 669512
+    },
+    {
+      "source_file": "2019-Oct.csv",
+      "rows": 425565
+    }
+  ]
+}

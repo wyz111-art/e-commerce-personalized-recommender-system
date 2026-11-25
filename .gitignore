@@ -1,0 +1,20 @@
+# SQL Server 数据库文件
+SQLData/
+*.mdf
+*.ldf
+
+# 缓存临时文件
+.pip-cache/
+.tmp/
+__pycache__/
+*.pyc
+*.log
+
+# 数据集、模型
+data/
+dataset/
+*.pth
+*.pkl
+*.parquet
+processed/clean_events_2019_10_11_1pct.csv
+processed/

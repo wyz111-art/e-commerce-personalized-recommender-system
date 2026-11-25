@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电商用户行为与推荐分析看板</title>
+  <style>
+    :root {
+      --ink: #172b35;
+      --muted: #6b7e84;
+      --line: #dce6e7;
+      --paper: #f4f7f6;
+      --panel: #ffffff;
+      --teal: #087f78;
+      --teal-2: #3aa9a0;
+      --blue: #3b78a8;
+      --blue-soft: #d9ebf4;
+      --orange: #df7a4d;
+      --orange-soft: #fff0e7;
+      --navy: #224d67;
+      --shadow: 0 12px 28px rgba(25, 59, 67, .07);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, "Microsoft YaHei", "PingFang SC", sans-serif; }
+    .page { max-width: 1520px; margin: 0 auto; padding: 22px 28px 34px; }
+    .top { display: flex; justify-content: center; align-items: center; padding: 16px 4px 22px; border-bottom: 1px solid var(--line); text-align: center; }
+    .eyebrow, .kicker { margin: 0 0 8px; color: var(--teal); font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { margin-bottom: 8px; font-size: clamp(28px, 4vw, 48px); line-height: 1.08; letter-spacing: 0; }
+    h2 { margin-bottom: 5px; font-size: 20px; letter-spacing: 0; }
+    h3 { margin-bottom: 3px; font-size: 15px; letter-spacing: 0; }
+    .section { margin-top: 22px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin: 0 2px 11px; }
+    .section-head p { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+    .cards { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .card, .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); }
+    .card { min-height: 108px; padding: 18px 18px; border-top: 3px solid var(--teal); }
+    .card:nth-child(2n) { border-top-color: var(--blue); }
+    .card:nth-child(3n) { border-top-color: var(--orange); }
+    .card-label { color: var(--muted); font-size: 12px; }
+    .card-value { margin-top: 13px; font-size: 29px; font-weight: 850; letter-spacing: 0; }
+    .card-note { margin-top: 4px; color: var(--muted); font-size: 11px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: 1.1fr .9fr 1fr; gap: 16px; }
+    .panel { min-width: 0; padding: 22px 23px 24px; }
+    .panel-head { display: flex; justify-content: space-between; align-items: start; gap: 15px; padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+    .panel-head p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; text-align: right; }
+    .panel-head > div:first-child { text-align: left; }
+    .panel-head .kicker { text-align: left; }
+    .funnel { display: grid; gap: 15px; padding-top: 24px; }
+    .funnel-row { display: grid; grid-template-columns: 68px 1fr 78px 58px; align-items: center; gap: 12px; }
+    .funnel-label { color: var(--muted); font-size: 12px; }
+    .funnel-track { height: 36px; background: #edf3f2; overflow: hidden; }
+    .funnel-bar { height: 100%; background: var(--teal); }
+    .funnel-row:nth-child(2) .funnel-bar { background: var(--blue); }
+    .funnel-row:nth-child(3) .funnel-bar { background: var(--navy); }
+    .funnel-number { font-size: 13px; font-weight: 800; text-align: right; }
+    .funnel-share { color: var(--muted); font-size: 11px; text-align: right; }
+    .rate-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0 0 80px; color: var(--muted); font-size: 13px; }
+    .rate-row strong { color: var(--ink); }
+    .event-mix { margin: 18px 0 0 80px; }
+    .event-mix-title { margin-bottom: 8px; color: var(--muted); font-size: 12px; }
+    .mix-track { display: flex; height: 15px; overflow: hidden; background: #edf3f2; }
+    .mix-view { width: 94.99%; background: var(--teal); }
+    .mix-cart { width: 3.49%; min-width: 5px; background: var(--blue); }
+    .mix-purchase { width: 1.52%; min-width: 4px; background: var(--orange); }
+    .mix-legend { display: flex; flex-wrap: wrap; gap: 6px 15px; margin-top: 8px; color: var(--muted); font-size: 11px; }
+    .mix-legend strong { color: var(--ink); }
+    .segment-list { display: grid; gap: 16px; padding-top: 22px; }
+    .segment-row { display: grid; grid-template-columns: 88px 1fr 72px; align-items: center; gap: 11px; }
+    .segment-name { color: var(--muted); font-size: 12px; }
+    .segment-track { height: 16px; background: #edf3f2; overflow: hidden; }
+    .segment-bar { height: 100%; background: var(--blue); }
+    .segment-row:nth-child(2) .segment-bar { background: #5ba4b8; }
+    .segment-row:nth-child(3) .segment-bar { background: #88bdc5; }
+    .segment-row:nth-child(4) .segment-bar { background: #b9d8d8; }
+    .segment-value { color: var(--ink); font-size: 12px; font-weight: 800; text-align: right; }
+    .mini-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 12px; }
+    .mini-table th { padding: 8px 6px; color: var(--muted); font-size: 11px; font-weight: 700; text-align: left; border-bottom: 1px solid var(--line); }
+    .mini-table td { padding: 9px 6px; border-bottom: 1px solid #eef3f2; }
+    .mini-table td:last-child, .mini-table th:last-child { text-align: right; }
+    .path-list { display: grid; gap: 12px; padding-top: 19px; }
+    .path-row { display: grid; grid-template-columns: 155px 1fr 58px; align-items: center; gap: 10px; }
+    .path-name { color: var(--muted); font-size: 12px; }
+    .path-track { height: 13px; background: #edf3f2; overflow: hidden; }
+    .path-bar { height: 100%; background: var(--teal-2); }
+    .path-value { font-size: 12px; font-weight: 800; text-align: right; }
+    .donut-layout { display: grid; grid-template-columns: 172px 1fr; align-items: center; gap: 21px; padding-top: 24px; }
+    .donut { width: 164px; height: 164px; border-radius: 50%; background: conic-gradient(var(--navy) 0 69.23%, #76afc4 69.23% 95.64%, #c3dfe4 95.64% 100%); position: relative; }
+    .donut::after { content: ""; width: 84px; height: 84px; position: absolute; top: 40px; left: 40px; border-radius: 50%; background: var(--panel); }
+    .legend { display: grid; gap: 15px; }
+    .legend-row { display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: 12px; }
+    .legend-label { white-space: nowrap; }
+    .legend-label::before { content: ""; display: inline-block; width: 9px; height: 9px; margin-right: 7px; background: var(--navy); }
+    .legend-row:nth-child(2) .legend-label::before { background: #76afc4; }
+    .legend-row:nth-child(3) .legend-label::before { background: #c3dfe4; }
+    .insight { margin-top: 20px; padding: 15px 16px; border-left: 3px solid var(--orange); background: var(--orange-soft); color: #7a594b; font-size: 13px; line-height: 1.7; }
+    .product-table td:first-child { color: var(--teal-dark, #075d59); font-weight: 800; }
+    .model-toolbar { display: flex; flex-wrap: wrap; gap: 7px; }
+    .model-toolbar button { border: 1px solid var(--line); padding: 7px 10px; border-radius: 3px; background: #f1f5f4; color: var(--muted); cursor: pointer; font-size: 11px; }
+    .model-toolbar button.active { border-color: var(--teal); background: var(--teal); color: white; }
+    .model-chart { display: grid; gap: 12px; padding-top: 20px; }
+    .model-row { display: grid; grid-template-columns: 118px 1fr 65px; gap: 11px; align-items: center; }
+    .model-name { font-size: 12px; }
+    .model-track { height: 19px; background: #edf3f2; overflow: hidden; }
+    .model-bar { height: 100%; background: var(--teal); }
+    .model-row:nth-child(2) .model-bar { background: var(--blue); }
+    .model-row:nth-child(3) .model-bar { background: #6b9db5; }
+    .model-row:nth-child(4) .model-bar { background: #80b9bb; }
+    .model-row:nth-child(5) .model-bar { background: var(--orange); }
+    .model-value { font-size: 12px; font-weight: 850; text-align: right; }
+    .model-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px; }
+    .model-note { padding: 12px; background: #f3f7f6; }
+    .model-note strong { display: block; margin-bottom: 5px; font-size: 13px; }
+    .model-note span { color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .source-note { margin: 13px 0 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    @media (max-width: 900px) { .cards { grid-template-columns: repeat(3, 1fr); } .grid-3 { grid-template-columns: 1fr 1fr; } .grid-3 > :last-child { grid-column: 1 / -1; } }
+    @media (min-width: 721px) and (max-width: 1200px) { .donut-layout { grid-template-columns: 126px minmax(0,1fr); gap: 12px; } .donut { width: 120px; height: 120px; } .donut::after { width: 62px; height: 62px; top: 29px; left: 29px; } .legend-row { gap: 6px; font-size: 10px; } }
+    @media (max-width: 720px) { .page { padding: 14px 14px 24px; } .top, .section-head { display: block; text-align: left; } .top { text-align: center; } .cards, .grid-2, .grid-3, .model-notes { grid-template-columns: 1fr; } .grid-3 > :last-child { grid-column: auto; } .card { min-height: 88px; } .panel { margin-bottom: 14px; } .funnel-row { grid-template-columns: 55px minmax(60px,1fr) 60px 44px; gap: 6px; } .funnel-number { font-size: 11px; } .funnel-share { font-size: 10px; } .rate-row { padding-left: 0; } .donut-layout { grid-template-columns: 1fr; justify-items: center; } .legend { width: 100%; } .path-row { grid-template-columns: 120px 1fr 52px; gap: 7px; } .model-row { grid-template-columns: 92px 1fr 57px; gap: 7px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="top">
+      <h1>电商用户行为与推荐分析看板</h1>
+    </header>
+
+    <section class="section">
+      <div class="section-head"><div><p class="kicker">01 / OVERVIEW</p><h2>总体概况</h2></div><p>清洗后事件明细与汇总数据</p></div>
+      <div class="cards" id="overviewCards"></div>
+    </section>
+
+    <section class="section grid-2">
+      <article class="panel"><div class="panel-head"><div><p class="kicker">02 / FUNNEL</p><h3>用户行为转化漏斗</h3></div><p>统计全量会话</p></div><div class="funnel" id="funnel"></div><div class="rate-row"><span>浏览 → 加购</span><strong>9.997%</strong><span>加购 → 购买</span><strong>41.375%</strong></div><div class="rate-row"><span>浏览 → 购买</span><strong>6.122%</strong><span>会话购买率</span><strong>6.177%</strong></div><div class="event-mix"><div class="event-mix-title">事件构成</div><div class="mix-track" aria-label="浏览 94.99%，加购 3.49%，购买 1.52%"><span class="mix-view"></span><span class="mix-cart"></span><span class="mix-purchase"></span></div><div class="mix-legend"><span>浏览 <strong>94.99%</strong></span><span>加购 <strong>3.49%</strong></span><span>购买 <strong>1.52%</strong></span></div></div><div class="insight">浏览到加购约每 10 个浏览会话产生 1 个加购会话；发生加购后，约 41.38% 的加购会话随后有购买记录。</div></article>
+      <article class="panel"><div class="panel-head"><div><p class="kicker">03 / USERS</p><h3>用户活跃度分层</h3></div><p>按会话数量划分<br>用户层规模与购买用户</p></div><div class="segment-list" id="segments"></div><table class="mini-table"><thead><tr><th>用户层</th><th>用户数</th><th>购买用户</th><th>购买率</th></tr></thead><tbody id="segmentTable"></tbody></table><div class="insight">高活跃用户购买率约为单会话用户的 11.6 倍，表明历史行为丰富度与购买表现相关；这不是因果结论。</div></article>
+    </section>
+
+    <section class="section grid-3">
+      <article class="panel"><div class="panel-head"><div><p class="kicker">04 / SESSION</p><h3>会话行为路径</h3></div><p>按事件时间先后<br>互斥分类 / 共 229,075 个会话</p></div><div class="path-list" id="paths"></div><div class="insight">路径依据同一会话内事件时间顺序分类，不代表因果关系。浏览、加购可作为推荐兴趣信号；推荐输出会过滤历史已加购商品。</div></article>
+      <article class="panel"><div class="panel-head"><div><p class="kicker">05 / LONG TAIL</p><h3>购买集中度</h3></div><p>头部商品贡献购买事件</p></div><div class="donut-layout"><div class="donut" aria-label="头部商品购买贡献"></div><div class="legend"><div class="legend-row"><span class="legend-label">Top 1%</span><strong>69.23%</strong></div><div class="legend-row"><span class="legend-label">Top 1–5%</span><strong>26.41%</strong></div><div class="legend-row"><span class="legend-label">其余 95%</span><strong>4.36%</strong></div></div></div><div class="insight">Top 5% 商品累计贡献 95.64% 的购买事件。共有 83,392 件商品，但只有 4,897 件发生过购买，商品交互稀疏也是 Item-CF 使用共现收缩的原因。</div></article>
+      <article class="panel"><div class="panel-head"><div><p class="kicker">06 / PRODUCTS</p><h3>购买量 Top 10</h3></div></div><table class="mini-table product-table"><thead><tr><th>商品 ID</th><th>浏览</th><th>加购</th><th>购买</th></tr></thead><tbody id="products"></tbody></table></article>
+    </section>
+
+    <section class="section panel"><div class="panel-head"><div><p class="kicker">07 / RECOMMENDATION</p><h3>推荐模型效果对比</h3></div><div class="model-toolbar" id="modelToolbar"></div></div><div class="model-chart" id="modelChart"></div><div class="model-notes"><div class="model-note"><strong>两路融合</strong><span>最终测试 Recall@10 最高，适合观察综合命中表现。</span></div><div class="model-note"><strong>User-CF</strong><span>NDCG@10 最高，推荐排序质量较好，作为界面默认模型。</span></div><div class="model-note"><strong>Item-CF</strong><span>商品覆盖率最高，推荐理由更容易解释为“根据历史商品推荐”。</span></div></div><p class="source-note">模型指标来自最终测试阶段的统一用户与答案口径；Recall、NDCG 为用户级宏平均。热门补齐位仅对个性化模型有意义。</p></section>
+
+  </div>
+  <script>
+    const DATA = {
+      overview: [
+        ["事件总数", "1,093,742", "view / cart / purchase"], ["用户数", "53,425", "匿名访客"], ["会话数", "229,075", "session_key"],
+        ["商品数", "83,392", "观察到的商品"], ["购买用户", "7,050", "13.20% 用户发生购买"], ["购买商品", "4,897", "5.87% 商品发生购买"]
+      ],
+      funnel: [["浏览", 228935], ["加购", 22886], ["购买", 14149]],
+      segments: [
+        ["单会话", 22749, 818], ["低活跃", 14145, 1326], ["中活跃", 9013, 1777], ["高活跃", 7518, 3129]
+      ],
+      paths: [["浏览→加购→购买", 9469], ["浏览→直接购买", 4546], ["浏览→加购未购买", 13386], ["只有浏览", 201419], ["无浏览但购买", 85], ["只有加购", 55], ["其他路径", 115]],
+      products: [
+        [1004856, 9437, 1447, 705], [1004767, 8550, 957, 415], [1005115, 8955, 754, 339], [4804056, 5055, 689, 250], [1004833, 4464, 504, 240],
+        [1004870, 4708, 530, 223], [1002544, 3987, 379, 199], [1004249, 4721, 403, 188], [1005105, 4910, 349, 177], [1004750, 2434, 261, 159]
+      ],
+      models: [
+        ["购买热门", .148154, .088702, .000228], ["综合行为热门", .156692, .091194, .000241], ["改进版 Item-CF", .161205, .093128, .038839], ["User-CF", .163279, .102360, .030006], ["两路融合", .171278, .102177, .032469]
+      ]
+    };
+    const fmt = (v) => new Intl.NumberFormat("zh-CN").format(v);
+    const pct = (v) => `${(v * 100).toFixed(2)}%`;
+    document.getElementById("overviewCards").innerHTML = DATA.overview.map(([label, value, note]) => `<div class="card"><div class="card-label">${label}</div><div class="card-value">${value}</div><div class="card-note">${note}</div></div>`).join("");
+    const maxFunnel = DATA.funnel[0][1];
+    document.getElementById("funnel").innerHTML = DATA.funnel.map(([label, value]) => `<div class="funnel-row"><span class="funnel-label">${label}</span><div class="funnel-track"><div class="funnel-bar" style="width:${value / maxFunnel * 100}%"></div></div><strong class="funnel-number">${fmt(value)}</strong><span class="funnel-share">${pct(value / maxFunnel)}</span></div>`).join("");
+    const maxSegment = Math.max(...DATA.segments.map((row) => row[1]));
+    document.getElementById("segments").innerHTML = DATA.segments.map(([label, users]) => `<div class="segment-row"><span class="segment-name">${label}</span><div class="segment-track"><div class="segment-bar" style="width:${users / maxSegment * 100}%"></div></div><strong class="segment-value">${fmt(users)}</strong></div>`).join("");
+    document.getElementById("segmentTable").innerHTML = DATA.segments.map(([label, users, buyers]) => `<tr><td>${label}</td><td>${fmt(users)}</td><td>${fmt(buyers)}</td><td>${pct(buyers / users)}</td></tr>`).join("");
+    const maxPath = Math.max(...DATA.paths.map((row) => row[1]));
+    document.getElementById("paths").innerHTML = DATA.paths.map(([label, value]) => `<div class="path-row"><span class="path-name">${label}</span><div class="path-track"><div class="path-bar" style="width:${value / maxPath * 100}%"></div></div><strong class="path-value">${fmt(value)}</strong></div>`).join("");
+    document.getElementById("products").innerHTML = DATA.products.map(([id, view, cart, purchase]) => `<tr><td>${id}</td><td>${fmt(view)}</td><td>${fmt(cart)}</td><td>${fmt(purchase)}</td></tr>`).join("");
+    const metricOptions = [["Recall@10", 1], ["NDCG@10", 2], ["商品覆盖率", 3]];
+    let activeMetric = 1;
+    function renderModels() {
+      const values = DATA.models.map((row) => row[activeMetric]);
+      const max = Math.max(...values);
+      document.getElementById("modelChart").innerHTML = DATA.models.map((row) => `<div class="model-row"><span class="model-name">${row[0]}</span><div class="model-track"><div class="model-bar" style="width:${row[activeMetric] / max * 100}%"></div></div><strong class="model-value">${activeMetric === 3 ? pct(row[activeMetric]) : activeMetric === 1 ? pct(row[activeMetric]) : row[activeMetric].toFixed(4)}</strong></div>`).join("");
+      document.querySelectorAll(".model-toolbar button").forEach((button, index) => button.classList.toggle("active", index === activeMetric - 1));
+    }
+    document.getElementById("modelToolbar").innerHTML = metricOptions.map(([label], index) => `<button type="button" data-index="${index + 1}">${label}</button>`).join("");
+    document.querySelectorAll(".model-toolbar button").forEach((button) => button.addEventListener("click", () => { activeMetric = Number(button.dataset.index); renderModels(); }));
+    renderModels();
+  </script>
+</body>
+</html>

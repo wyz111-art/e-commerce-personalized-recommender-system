@@ -1,0 +1,4481 @@
+{
+  "split": "validation_only",
+  "timezone": "UTC",
+  "policy": "exclude_cart_and_purchase",
+  "k": 10,
+  "history_end_exclusive_utc": "2019-11-11 00:00:00",
+  "answer_end_exclusive_utc": "2019-11-21 00:00:00",
+  "source_run": "D:\\user_behavior\\reports\\cf_discovery_validation",
+  "input_sha256": {
+    "train_interactions.parquet": "5649e225cefcb300a61e72cfb7a84cd817af18c01548f3cf817a63892b0eeea5",
+    "validation_targets.parquet": "848aae4b8c04a321a627a02b25fbd035879cf4ab785e4b987b8ea208b3c41628",
+    "validation_user_segments.parquet": "ec0c022ca24a70794c14c7e5e1d8310b22fef830ff0984816f8b82dfa882d7b7"
+  },
+  "recommendations_sha256": "138f913cfd3aa86be5e0e44fea11b778583f656253980ea4b4aa0bcf0182968b",
+  "item_cf_parameters": {
+    "min_common_users": 2,
+    "shrinkage": 15.0,
+    "iuf": true,
+    "popularity_alpha": 0.0
+  },
+  "selection": {
+    "original_purchase_users": 2388,
+    "original_target_pairs": 3513,
+    "evaluated_users": 2274,
+    "eligible_target_pairs": 3287,
+    "removed_target_pairs": 226,
+    "removed_empty_label_users": 114
+  },
+  "outcomes_all_users": {
+    "user_only": 130,
+    "neither": 1768,
+    "both": 312,
+    "item_only": 64
+  },
+  "outcomes_known_users": {
+    "user_only": 130,
+    "neither": 1183,
+    "both": 161,
+    "item_only": 64
+  },
+  "known_user_misses_by_target_availability": {
+    "all_reachable": 1058,
+    "all_cold": 77,
+    "mixed": 48
+  },
+  "cases": [
+    {
+      "case_id": "both",
+      "label_zh": "两种 CF 都命中",
+      "user_id": 515060066,
+      "historical_summary": {
+        "user_id": 515060066,
+        "event_count": 2,
+        "session_count": 1,
+        "unique_product_count": 2,
+        "active_day_count": 1,
+        "view_count": 2,
+        "cart_count": 0,
+        "purchase_count": 0,
+        "first_event_at": "2019-10-04T07:54:38Z",
+        "last_event_at": "2019-10-04T07:55:45Z",
+        "activity_segment": "single_session",
+        "known_user": true
+      },
+      "history": [
+        {
+          "product_id": 1004210,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-04T07:55:45Z",
+          "last_interaction_at": "2019-10-04T07:55:45Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 1004209,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-04T07:54:38Z",
+          "last_interaction_at": "2019-10-04T07:54:38Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        }
+      ],
+      "validation_purchases": [
+        {
+          "product_id": 1004209,
+          "eligible": true,
+          "known_product": true,
+          "training_users": 444,
+          "first_purchase_at": "2019-11-11T14:37:09Z",
+          "history_relation": "prior_view_only"
+        }
+      ],
+      "recommendations": {
+        "popularity_purchase": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 398.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 287.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 184.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 152.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 5,
+            "score": 151.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 6,
+            "score": 138.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002633,
+            "rank": 10,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "popularity_interaction": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 4827.347646828981,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 4072.241703815691,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 3303.5534030098806,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 2241.3546166470637,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 5,
+            "score": 2182.1726329616813,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 6,
+            "score": 2149.669660455382,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 2118.2942806314427,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 1944.117581258319,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 1800.001789448301,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004836,
+            "rank": 10,
+            "score": 1494.2439353794657,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "item_cf": [
+          {
+            "product_id": 1004209,
+            "rank": 1,
+            "score": 0.1184348538517952,
+            "source": "item_cf",
+            "reason_product_id": 1004210,
+            "reason_user_id": null,
+            "reason_similarity": 0.17086537182331085,
+            "hit": true,
+            "evidence": {
+              "seed_product_id": 1004210,
+              "seed_history": {
+                "product_id": 1004210,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:55:45Z",
+                "last_interaction_at": "2019-10-04T07:55:45Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 66
+            }
+          },
+          {
+            "product_id": 1004210,
+            "rank": 2,
+            "score": 0.1184348538517952,
+            "source": "item_cf",
+            "reason_product_id": 1004209,
+            "reason_user_id": null,
+            "reason_similarity": 0.17086537182331085,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004209,
+              "seed_history": {
+                "product_id": 1004209,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:54:38Z",
+                "last_interaction_at": "2019-10-04T07:54:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 66
+            }
+          },
+          {
+            "product_id": 1005006,
+            "rank": 3,
+            "score": 0.0956978127360344,
+            "source": "item_cf",
+            "reason_product_id": 1004210,
+            "reason_user_id": null,
+            "reason_similarity": 0.08489660918712616,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004210,
+              "seed_history": {
+                "product_id": 1004210,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:55:45Z",
+                "last_interaction_at": "2019-10-04T07:55:45Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 23
+            }
+          },
+          {
+            "product_id": 1005008,
+            "rank": 4,
+            "score": 0.08772468566894531,
+            "source": "item_cf",
+            "reason_product_id": 1004210,
+            "reason_user_id": null,
+            "reason_similarity": 0.06387574225664139,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004210,
+              "seed_history": {
+                "product_id": 1004210,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:55:45Z",
+                "last_interaction_at": "2019-10-04T07:55:45Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 36
+            }
+          },
+          {
+            "product_id": 1005017,
+            "rank": 5,
+            "score": 0.08351323753595352,
+            "source": "item_cf",
+            "reason_product_id": 1004210,
+            "reason_user_id": null,
+            "reason_similarity": 0.07550303637981415,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004210,
+              "seed_history": {
+                "product_id": 1004210,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:55:45Z",
+                "last_interaction_at": "2019-10-04T07:55:45Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 22
+            }
+          },
+          {
+            "product_id": 1004446,
+            "rank": 6,
+            "score": 0.07335503399372101,
+            "source": "item_cf",
+            "reason_product_id": 1004209,
+            "reason_user_id": null,
+            "reason_similarity": 0.06276416778564453,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004209,
+              "seed_history": {
+                "product_id": 1004209,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:54:38Z",
+                "last_interaction_at": "2019-10-04T07:54:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 29
+            }
+          },
+          {
+            "product_id": 1005100,
+            "rank": 7,
+            "score": 0.06996164470911026,
+            "source": "item_cf",
+            "reason_product_id": 1004209,
+            "reason_user_id": null,
+            "reason_similarity": 0.0632840096950531,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004209,
+              "seed_history": {
+                "product_id": 1004209,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:54:38Z",
+                "last_interaction_at": "2019-10-04T07:54:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 86
+            }
+          },
+          {
+            "product_id": 1004834,
+            "rank": 8,
+            "score": 0.06825714558362961,
+            "source": "item_cf",
+            "reason_product_id": 1004209,
+            "reason_user_id": null,
+            "reason_similarity": 0.07017269730567932,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004209,
+              "seed_history": {
+                "product_id": 1004209,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:54:38Z",
+                "last_interaction_at": "2019-10-04T07:54:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 32
+            }
+          },
+          {
+            "product_id": 1004856,
+            "rank": 9,
+            "score": 0.06568126380443573,
+            "source": "item_cf",
+            "reason_product_id": 1004209,
+            "reason_user_id": null,
+            "reason_similarity": 0.06356609612703323,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004209,
+              "seed_history": {
+                "product_id": 1004209,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:54:38Z",
+                "last_interaction_at": "2019-10-04T07:54:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 189
+            }
+          },
+          {
+            "product_id": 1004858,
+            "rank": 10,
+            "score": 0.05455145239830017,
+            "source": "item_cf",
+            "reason_product_id": 1004209,
+            "reason_user_id": null,
+            "reason_similarity": 0.04512248560786247,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004209,
+              "seed_history": {
+                "product_id": 1004209,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T07:54:38Z",
+                "last_interaction_at": "2019-10-04T07:54:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 63
+            }
+          }
+        ],
+        "user_cf": [
+          {
+            "product_id": 1004209,
+            "rank": 1,
+            "score": 1.7435024976730347,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 565850084,
+            "reason_similarity": 0.7447910904884338,
+            "hit": true,
+            "evidence": {
+              "peer_user_id": 565850084,
+              "peer_candidate_history": {
+                "product_id": 1004209,
+                "event_count": 24,
+                "view_count": 19,
+                "cart_count": 3,
+                "purchase_count": 2,
+                "session_count": 14,
+                "first_interaction_at": "2019-10-30T17:39:34Z",
+                "last_interaction_at": "2019-11-03T08:58:14Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 10.99573227355399
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1004210,
+            "rank": 2,
+            "score": 1.0060690641403198,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 547050028,
+            "reason_similarity": 0.8421658873558044,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 547050028,
+              "peer_candidate_history": {
+                "product_id": 1004210,
+                "event_count": 10,
+                "view_count": 5,
+                "cart_count": 4,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-18T05:32:07Z",
+                "last_interaction_at": "2019-10-18T05:46:50Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.791759469228055
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1005100,
+            "rank": 3,
+            "score": 0.12610381841659546,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 563380001,
+            "reason_similarity": 0.8229522705078125,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 563380001,
+              "peer_candidate_history": {
+                "product_id": 1005100,
+                "event_count": 4,
+                "view_count": 2,
+                "cart_count": 1,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-11-05T04:57:16Z",
+                "last_interaction_at": "2019-11-05T04:58:11Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.098612288668111
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1004856,
+            "rank": 4,
+            "score": 0.12095996737480164,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 519320006,
+            "reason_similarity": 0.6203269958496094,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 519320006,
+              "peer_candidate_history": {
+                "product_id": 1004856,
+                "event_count": 4,
+                "view_count": 3,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-15T14:06:39Z",
+                "last_interaction_at": "2019-10-15T14:10:46Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.386294361119891
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1005008,
+            "rank": 5,
+            "score": 0.09396255761384964,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 549060054,
+            "reason_similarity": 0.6450850963592529,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 549060054,
+              "peer_candidate_history": {
+                "product_id": 1005008,
+                "event_count": 2,
+                "view_count": 0,
+                "cart_count": 1,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-08T10:02:21Z",
+                "last_interaction_at": "2019-10-08T10:03:33Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 8.0
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1004834,
+            "rank": 6,
+            "score": 0.08744613826274872,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 549060054,
+            "reason_similarity": 0.6450850963592529,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 549060054,
+              "peer_candidate_history": {
+                "product_id": 1004834,
+                "event_count": 4,
+                "view_count": 2,
+                "cart_count": 1,
+                "purchase_count": 1,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-07T13:02:31Z",
+                "last_interaction_at": "2019-10-08T09:53:06Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.098612288668111
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 19200005,
+            "rank": 7,
+            "score": 0.08744613826274872,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 549060054,
+            "reason_similarity": 0.6450850963592529,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 549060054,
+              "peer_candidate_history": {
+                "product_id": 19200005,
+                "event_count": 4,
+                "view_count": 2,
+                "cart_count": 1,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-08T09:54:10Z",
+                "last_interaction_at": "2019-10-08T09:55:41Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.098612288668111
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1004211,
+            "rank": 8,
+            "score": 0.07127127051353455,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 547480091,
+            "reason_similarity": 0.678702712059021,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 547480091,
+              "peer_candidate_history": {
+                "product_id": 1004211,
+                "event_count": 5,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-13T05:59:45Z",
+                "last_interaction_at": "2019-10-13T06:01:37Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.791759469228055
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1004872,
+            "rank": 9,
+            "score": 0.06777875125408173,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 562480095,
+            "reason_similarity": 0.4999999701976776,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 562480095,
+              "peer_candidate_history": {
+                "product_id": 1004872,
+                "event_count": 4,
+                "view_count": 2,
+                "cart_count": 1,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-21T05:55:28Z",
+                "last_interaction_at": "2019-10-21T05:57:10Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.098612288668111
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004210
+              ]
+            }
+          },
+          {
+            "product_id": 1004446,
+            "rank": 10,
+            "score": 0.05685046315193176,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 565850084,
+            "reason_similarity": 0.7447910904884338,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 565850084,
+              "peer_candidate_history": {
+                "product_id": 1004446,
+                "event_count": 7,
+                "view_count": 7,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 3,
+                "first_interaction_at": "2019-10-30T17:25:16Z",
+                "last_interaction_at": "2019-10-31T08:09:37Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 2.0794415416798357
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004209,
+                1004210
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "item_only",
+      "label_zh": "仅 Item-CF 命中",
+      "user_id": 512540051,
+      "historical_summary": {
+        "user_id": 512540051,
+        "event_count": 31,
+        "session_count": 10,
+        "unique_product_count": 15,
+        "active_day_count": 8,
+        "view_count": 30,
+        "cart_count": 1,
+        "purchase_count": 0,
+        "first_event_at": "2019-10-04T17:52:20Z",
+        "last_event_at": "2019-11-08T04:57:31Z",
+        "activity_segment": "high_activity",
+        "known_user": true
+      },
+      "history": [
+        {
+          "product_id": 12703410,
+          "event_count": 5,
+          "view_count": 4,
+          "cart_count": 1,
+          "purchase_count": 0,
+          "session_count": 2,
+          "first_interaction_at": "2019-10-29T11:44:31Z",
+          "last_interaction_at": "2019-11-08T04:57:31Z",
+          "cart_flag": true,
+          "purchase_flag": false,
+          "interaction_score": 4.6094379124341005
+        },
+        {
+          "product_id": 12711508,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-11-08T04:55:10Z",
+          "last_interaction_at": "2019-11-08T04:55:10Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 1004897,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-11-06T13:49:32Z",
+          "last_interaction_at": "2019-11-06T13:49:32Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 1004849,
+          "event_count": 5,
+          "view_count": 5,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 3,
+          "first_interaction_at": "2019-10-04T17:52:20Z",
+          "last_interaction_at": "2019-10-27T17:57:03Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.791759469228055
+        },
+        {
+          "product_id": 12703415,
+          "event_count": 2,
+          "view_count": 2,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-27T17:01:02Z",
+          "last_interaction_at": "2019-10-27T17:02:33Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.0986122886681098
+        },
+        {
+          "product_id": 12710449,
+          "event_count": 4,
+          "view_count": 4,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 2,
+          "first_interaction_at": "2019-10-04T17:55:54Z",
+          "last_interaction_at": "2019-10-27T09:18:54Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.6094379124341003
+        },
+        {
+          "product_id": 1004360,
+          "event_count": 2,
+          "view_count": 2,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-20T10:16:19Z",
+          "last_interaction_at": "2019-10-20T10:16:37Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.0986122886681098
+        },
+        {
+          "product_id": 1005136,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-20T10:15:58Z",
+          "last_interaction_at": "2019-10-20T10:15:58Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 12701289,
+          "event_count": 2,
+          "view_count": 2,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-15T17:45:15Z",
+          "last_interaction_at": "2019-10-15T17:45:44Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.0986122886681098
+        },
+        {
+          "product_id": 12703494,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-15T17:44:11Z",
+          "last_interaction_at": "2019-10-15T17:44:11Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 12705448,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-15T17:43:58Z",
+          "last_interaction_at": "2019-10-15T17:43:58Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 12718062,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-15T17:43:01Z",
+          "last_interaction_at": "2019-10-15T17:43:01Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 1004850,
+          "event_count": 2,
+          "view_count": 2,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-13T10:43:33Z",
+          "last_interaction_at": "2019-10-13T10:45:47Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.0986122886681098
+        },
+        {
+          "product_id": 3601212,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-13T10:42:07Z",
+          "last_interaction_at": "2019-10-13T10:42:07Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        },
+        {
+          "product_id": 1004840,
+          "event_count": 2,
+          "view_count": 2,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-04T17:53:28Z",
+          "last_interaction_at": "2019-10-04T17:55:01Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 1.0986122886681098
+        }
+      ],
+      "validation_purchases": [
+        {
+          "product_id": 1004848,
+          "eligible": true,
+          "known_product": true,
+          "training_users": 84,
+          "first_purchase_at": "2019-11-19T15:13:15Z",
+          "history_relation": "no_prior_user_product_interaction"
+        }
+      ],
+      "recommendations": {
+        "popularity_purchase": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 398.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 287.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 184.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 152.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 5,
+            "score": 151.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 6,
+            "score": 138.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002633,
+            "rank": 10,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "popularity_interaction": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 4827.347646828981,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 4072.241703815691,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 3303.5534030098806,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 2241.3546166470637,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 5,
+            "score": 2182.1726329616813,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 6,
+            "score": 2149.669660455382,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 2118.2942806314427,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 1944.117581258319,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 1800.001789448301,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004836,
+            "rank": 10,
+            "score": 1494.2439353794657,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "item_cf": [
+          {
+            "product_id": 1004848,
+            "rank": 1,
+            "score": 0.44073885679244995,
+            "source": "item_cf",
+            "reason_product_id": 1004850,
+            "reason_user_id": null,
+            "reason_similarity": 0.21521686017513275,
+            "hit": true,
+            "evidence": {
+              "seed_product_id": 1004850,
+              "seed_history": {
+                "product_id": 1004850,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-13T10:43:33Z",
+                "last_interaction_at": "2019-10-13T10:45:47Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "common_users": 23
+            }
+          },
+          {
+            "product_id": 1003879,
+            "rank": 2,
+            "score": 0.42577698826789856,
+            "source": "item_cf",
+            "reason_product_id": 1004850,
+            "reason_user_id": null,
+            "reason_similarity": 0.1592404544353485,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004850,
+              "seed_history": {
+                "product_id": 1004850,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-13T10:43:33Z",
+                "last_interaction_at": "2019-10-13T10:45:47Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "common_users": 18
+            }
+          },
+          {
+            "product_id": 1004840,
+            "rank": 3,
+            "score": 0.41562575101852417,
+            "source": "item_cf",
+            "reason_product_id": 1004849,
+            "reason_user_id": null,
+            "reason_similarity": 0.15368637442588806,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004849,
+              "seed_history": {
+                "product_id": 1004849,
+                "event_count": 5,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 3,
+                "first_interaction_at": "2019-10-04T17:52:20Z",
+                "last_interaction_at": "2019-10-27T17:57:03Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.791759469228055
+              },
+              "common_users": 57
+            }
+          },
+          {
+            "product_id": 1004428,
+            "rank": 4,
+            "score": 0.3986707031726837,
+            "source": "item_cf",
+            "reason_product_id": 1004840,
+            "reason_user_id": null,
+            "reason_similarity": 0.14667922258377075,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004840,
+              "seed_history": {
+                "product_id": 1004840,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T17:53:28Z",
+                "last_interaction_at": "2019-10-04T17:55:01Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "common_users": 32
+            }
+          },
+          {
+            "product_id": 12710306,
+            "rank": 5,
+            "score": 0.3682078421115875,
+            "source": "item_cf",
+            "reason_product_id": 12703410,
+            "reason_user_id": null,
+            "reason_similarity": 0.07628066092729568,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 12703410,
+              "seed_history": {
+                "product_id": 12703410,
+                "event_count": 5,
+                "view_count": 4,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-29T11:44:31Z",
+                "last_interaction_at": "2019-11-08T04:57:31Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.6094379124341005
+              },
+              "common_users": 7
+            }
+          },
+          {
+            "product_id": 1004849,
+            "rank": 6,
+            "score": 0.3636610209941864,
+            "source": "item_cf",
+            "reason_product_id": 1004840,
+            "reason_user_id": null,
+            "reason_similarity": 0.15368637442588806,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004840,
+              "seed_history": {
+                "product_id": 1004840,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T17:53:28Z",
+                "last_interaction_at": "2019-10-04T17:55:01Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "common_users": 57
+            }
+          },
+          {
+            "product_id": 12711508,
+            "rank": 7,
+            "score": 0.331470787525177,
+            "source": "item_cf",
+            "reason_product_id": 12703410,
+            "reason_user_id": null,
+            "reason_similarity": 0.05049869045615196,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 12703410,
+              "seed_history": {
+                "product_id": 12703410,
+                "event_count": 5,
+                "view_count": 4,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-29T11:44:31Z",
+                "last_interaction_at": "2019-11-08T04:57:31Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.6094379124341005
+              },
+              "common_users": 5
+            }
+          },
+          {
+            "product_id": 1004850,
+            "rank": 8,
+            "score": 0.331209659576416,
+            "source": "item_cf",
+            "reason_product_id": 1004849,
+            "reason_user_id": null,
+            "reason_similarity": 0.10834194719791412,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004849,
+              "seed_history": {
+                "product_id": 1004849,
+                "event_count": 5,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 3,
+                "first_interaction_at": "2019-10-04T17:52:20Z",
+                "last_interaction_at": "2019-10-27T17:57:03Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.791759469228055
+              },
+              "common_users": 23
+            }
+          },
+          {
+            "product_id": 1004544,
+            "rank": 9,
+            "score": 0.3134611248970032,
+            "source": "item_cf",
+            "reason_product_id": 1004849,
+            "reason_user_id": null,
+            "reason_similarity": 0.07839187234640121,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004849,
+              "seed_history": {
+                "product_id": 1004849,
+                "event_count": 5,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 3,
+                "first_interaction_at": "2019-10-04T17:52:20Z",
+                "last_interaction_at": "2019-10-27T17:57:03Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.791759469228055
+              },
+              "common_users": 17
+            }
+          },
+          {
+            "product_id": 1004536,
+            "rank": 10,
+            "score": 0.30565008521080017,
+            "source": "item_cf",
+            "reason_product_id": 1004840,
+            "reason_user_id": null,
+            "reason_similarity": 0.15848368406295776,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004840,
+              "seed_history": {
+                "product_id": 1004840,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-04T17:53:28Z",
+                "last_interaction_at": "2019-10-04T17:55:01Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "common_users": 18
+            }
+          }
+        ],
+        "user_cf": [
+          {
+            "product_id": 1004849,
+            "rank": 1,
+            "score": 0.42179200053215027,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 513670064,
+            "reason_similarity": 0.2987362742424011,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 513670064,
+              "peer_candidate_history": {
+                "product_id": 1004849,
+                "event_count": 4,
+                "view_count": 3,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-15T09:00:49Z",
+                "last_interaction_at": "2019-10-15T09:01:37Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.386294361119891
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                1004840,
+                1004849
+              ]
+            }
+          },
+          {
+            "product_id": 12703415,
+            "rank": 2,
+            "score": 0.2489015758037567,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 526730029,
+            "reason_similarity": 0.236366406083107,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 526730029,
+              "peer_candidate_history": {
+                "product_id": 12703415,
+                "event_count": 7,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 2,
+                "session_count": 3,
+                "first_interaction_at": "2019-11-03T08:48:17Z",
+                "last_interaction_at": "2019-11-05T11:30:06Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 6.7917594692280545
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                12703410,
+                12703415
+              ]
+            }
+          },
+          {
+            "product_id": 1004840,
+            "rank": 3,
+            "score": 0.2126328945159912,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 520220091,
+            "reason_similarity": 0.3068208694458008,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 520220091,
+              "peer_candidate_history": {
+                "product_id": 1004840,
+                "event_count": 4,
+                "view_count": 4,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-11-05T03:18:44Z",
+                "last_interaction_at": "2019-11-05T03:19:44Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.6094379124341003
+              },
+              "shared_product_count": 3,
+              "shared_product_ids_sample": [
+                1004840,
+                1004849,
+                1004897
+              ]
+            }
+          },
+          {
+            "product_id": 12710306,
+            "rank": 4,
+            "score": 0.13656631112098694,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 522100043,
+            "reason_similarity": 0.3019947111606598,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 522100043,
+              "peer_candidate_history": {
+                "product_id": 12710306,
+                "event_count": 9,
+                "view_count": 5,
+                "cart_count": 3,
+                "purchase_count": 1,
+                "session_count": 3,
+                "first_interaction_at": "2019-11-09T11:48:07Z",
+                "last_interaction_at": "2019-11-10T17:57:29Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.791759469228055
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                12703410
+              ]
+            }
+          },
+          {
+            "product_id": 1307356,
+            "rank": 5,
+            "score": 0.10693527013063431,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 516050098,
+            "reason_similarity": 0.48205792903900146,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 516050098,
+              "peer_candidate_history": {
+                "product_id": 1307356,
+                "event_count": 6,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 1,
+                "session_count": 4,
+                "first_interaction_at": "2019-11-03T07:35:03Z",
+                "last_interaction_at": "2019-11-03T10:42:08Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 6.7917594692280545
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                12703410,
+                12711508
+              ]
+            }
+          },
+          {
+            "product_id": 12703015,
+            "rank": 6,
+            "score": 0.06588771939277649,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 526730029,
+            "reason_similarity": 0.236366406083107,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 526730029,
+              "peer_candidate_history": {
+                "product_id": 12703015,
+                "event_count": 8,
+                "view_count": 8,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 5,
+                "first_interaction_at": "2019-11-01T07:28:13Z",
+                "last_interaction_at": "2019-11-08T13:40:20Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 2.1972245773362196
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                12703410,
+                12703415
+              ]
+            }
+          },
+          {
+            "product_id": 12701289,
+            "rank": 7,
+            "score": 0.06505005061626434,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 513580061,
+            "reason_similarity": 0.20151925086975098,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 513580061,
+              "peer_candidate_history": {
+                "product_id": 12701289,
+                "event_count": 5,
+                "view_count": 4,
+                "cart_count": 0,
+                "purchase_count": 1,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-07T11:01:04Z",
+                "last_interaction_at": "2019-10-10T07:32:16Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 6.6094379124341005
+              },
+              "shared_product_count": 3,
+              "shared_product_ids_sample": [
+                12701289,
+                12710449,
+                12711508
+              ]
+            }
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 0.06453205645084381,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 516050098,
+            "reason_similarity": 0.48205792903900146,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 516050098,
+              "peer_candidate_history": {
+                "product_id": 1004249,
+                "event_count": 3,
+                "view_count": 2,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-15T05:30:29Z",
+                "last_interaction_at": "2019-10-15T05:32:13Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.09861228866811
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                12703410,
+                12711508
+              ]
+            }
+          },
+          {
+            "product_id": 1004856,
+            "rank": 9,
+            "score": 0.06313302367925644,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 539260054,
+            "reason_similarity": 0.7333084940910339,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 539260054,
+              "peer_candidate_history": {
+                "product_id": 1004856,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-16T15:56:54Z",
+                "last_interaction_at": "2019-10-16T15:56:54Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                12703410
+              ]
+            }
+          },
+          {
+            "product_id": 12711508,
+            "rank": 10,
+            "score": 0.05294326692819595,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 516050098,
+            "reason_similarity": 0.48205792903900146,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 516050098,
+              "peer_candidate_history": {
+                "product_id": 12711508,
+                "event_count": 3,
+                "view_count": 3,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-11-10T05:51:22Z",
+                "last_interaction_at": "2019-11-10T06:08:48Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.3862943611198906
+              },
+              "shared_product_count": 2,
+              "shared_product_ids_sample": [
+                12703410,
+                12711508
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "user_only",
+      "label_zh": "仅 User-CF 命中",
+      "user_id": 512440064,
+      "historical_summary": {
+        "user_id": 512440064,
+        "event_count": 1,
+        "session_count": 1,
+        "unique_product_count": 1,
+        "active_day_count": 1,
+        "view_count": 1,
+        "cart_count": 0,
+        "purchase_count": 0,
+        "first_event_at": "2019-10-06T18:16:02Z",
+        "last_event_at": "2019-10-06T18:16:02Z",
+        "activity_segment": "single_session",
+        "known_user": true
+      },
+      "history": [
+        {
+          "product_id": 1004238,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-06T18:16:02Z",
+          "last_interaction_at": "2019-10-06T18:16:02Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        }
+      ],
+      "validation_purchases": [
+        {
+          "product_id": 1004238,
+          "eligible": true,
+          "known_product": true,
+          "training_users": 145,
+          "first_purchase_at": "2019-11-17T05:54:05Z",
+          "history_relation": "prior_view_only"
+        }
+      ],
+      "recommendations": {
+        "popularity_purchase": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 398.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 287.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 184.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 152.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 5,
+            "score": 151.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 6,
+            "score": 138.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002633,
+            "rank": 10,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "popularity_interaction": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 4827.347646828981,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 4072.241703815691,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 3303.5534030098806,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 2241.3546166470637,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 5,
+            "score": 2182.1726329616813,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 6,
+            "score": 2149.669660455382,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 2118.2942806314427,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 1944.117581258319,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 1800.001789448301,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004836,
+            "rank": 10,
+            "score": 1494.2439353794657,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "item_cf": [
+          {
+            "product_id": 1004237,
+            "rank": 1,
+            "score": 0.09502152353525162,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.13708707690238953,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 53
+            }
+          },
+          {
+            "product_id": 1004240,
+            "rank": 2,
+            "score": 0.046428076922893524,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.06698155403137207,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 12
+            }
+          },
+          {
+            "product_id": 1003317,
+            "rank": 3,
+            "score": 0.0338519886136055,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.048838093876838684,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 29
+            }
+          },
+          {
+            "product_id": 1004356,
+            "rank": 4,
+            "score": 0.022790059447288513,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.03287910670042038,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 9
+            }
+          },
+          {
+            "product_id": 1004363,
+            "rank": 5,
+            "score": 0.02252083830535412,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.032490700483322144,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 1004241,
+            "rank": 6,
+            "score": 0.020348507910966873,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.029356691986322403,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 13
+            }
+          },
+          {
+            "product_id": 1004233,
+            "rank": 7,
+            "score": 0.019857462495565414,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.028648262843489647,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 3
+            }
+          },
+          {
+            "product_id": 1004236,
+            "rank": 8,
+            "score": 0.019028158858418465,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.027451829984784126,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 5
+            }
+          },
+          {
+            "product_id": 1005115,
+            "rank": 9,
+            "score": 0.017861390486359596,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.025768538936972618,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 65
+            }
+          },
+          {
+            "product_id": 1005121,
+            "rank": 10,
+            "score": 0.017483435571193695,
+            "source": "item_cf",
+            "reason_product_id": 1004238,
+            "reason_user_id": null,
+            "reason_similarity": 0.0252232663333416,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 1004238,
+              "seed_history": {
+                "product_id": 1004238,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-06T18:16:02Z",
+                "last_interaction_at": "2019-10-06T18:16:02Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 13
+            }
+          }
+        ],
+        "user_cf": [
+          {
+            "product_id": 1004238,
+            "rank": 1,
+            "score": 1.4055204391479492,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 538670086,
+            "reason_similarity": 0.9164400100708008,
+            "hit": true,
+            "evidence": {
+              "peer_user_id": 538670086,
+              "peer_candidate_history": {
+                "product_id": 1004238,
+                "event_count": 6,
+                "view_count": 3,
+                "cart_count": 2,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-26T18:15:56Z",
+                "last_interaction_at": "2019-10-26T18:22:03Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.38629436111989
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1004237,
+            "rank": 2,
+            "score": 0.34305769205093384,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 542330049,
+            "reason_similarity": 0.3500199615955353,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 542330049,
+              "peer_candidate_history": {
+                "product_id": 1004237,
+                "event_count": 40,
+                "view_count": 29,
+                "cart_count": 2,
+                "purchase_count": 9,
+                "session_count": 12,
+                "first_interaction_at": "2019-10-01T04:16:58Z",
+                "last_interaction_at": "2019-10-12T05:06:05Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 11.401197381662156
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 0.24090848863124847,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 542330049,
+            "reason_similarity": 0.3500199615955353,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 542330049,
+              "peer_candidate_history": {
+                "product_id": 1005115,
+                "event_count": 10,
+                "view_count": 9,
+                "cart_count": 0,
+                "purchase_count": 1,
+                "session_count": 6,
+                "first_interaction_at": "2019-10-03T17:09:01Z",
+                "last_interaction_at": "2019-11-01T05:58:23Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 7.302585092994046
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1003317,
+            "rank": 4,
+            "score": 0.21345201134681702,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 544030088,
+            "reason_similarity": 0.5718221068382263,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 544030088,
+              "peer_candidate_history": {
+                "product_id": 1003317,
+                "event_count": 3,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-09T15:27:47Z",
+                "last_interaction_at": "2019-10-09T15:30:06Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 6.09861228866811
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1004240,
+            "rank": 5,
+            "score": 0.1330435872077942,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 544030088,
+            "reason_similarity": 0.5718221068382263,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 544030088,
+              "peer_candidate_history": {
+                "product_id": 1004240,
+                "event_count": 3,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 1,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-11T11:10:23Z",
+                "last_interaction_at": "2019-10-11T11:12:17Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 6.09861228866811
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1005135,
+            "rank": 6,
+            "score": 0.1322965919971466,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 521550093,
+            "reason_similarity": 0.5980261564254761,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 521550093,
+              "peer_candidate_history": {
+                "product_id": 1005135,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-11-06T16:35:40Z",
+                "last_interaction_at": "2019-11-06T16:36:20Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 0.11381455510854721,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 568800021,
+            "reason_similarity": 0.4387730062007904,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 568800021,
+              "peer_candidate_history": {
+                "product_id": 1005105,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-11-08T04:50:05Z",
+                "last_interaction_at": "2019-11-08T04:50:06Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1004250,
+            "rank": 8,
+            "score": 0.08509505540132523,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 514240007,
+            "reason_similarity": 0.3364031910896301,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 514240007,
+              "peer_candidate_history": {
+                "product_id": 1004250,
+                "event_count": 3,
+                "view_count": 3,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-19T04:19:22Z",
+                "last_interaction_at": "2019-10-21T17:28:01Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.3862943611198906
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1004241,
+            "rank": 9,
+            "score": 0.08381374925374985,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 514540068,
+            "reason_similarity": 0.21507172286510468,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 514540068,
+              "peer_candidate_history": {
+                "product_id": 1004241,
+                "event_count": 5,
+                "view_count": 4,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 4,
+                "first_interaction_at": "2019-10-26T19:46:43Z",
+                "last_interaction_at": "2019-11-10T18:55:45Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.6094379124341005
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          },
+          {
+            "product_id": 1004249,
+            "rank": 10,
+            "score": 0.08306701481342316,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 551630057,
+            "reason_similarity": 0.6750877499580383,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 551630057,
+              "peer_candidate_history": {
+                "product_id": 1004249,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-02T04:12:55Z",
+                "last_interaction_at": "2019-10-02T04:12:55Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                1004238
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "known_miss",
+      "label_zh": "都没命中：商品在训练中出现过",
+      "user_id": 514500046,
+      "historical_summary": {
+        "user_id": 514500046,
+        "event_count": 1,
+        "session_count": 1,
+        "unique_product_count": 1,
+        "active_day_count": 1,
+        "view_count": 1,
+        "cart_count": 0,
+        "purchase_count": 0,
+        "first_event_at": "2019-10-28T16:00:08Z",
+        "last_event_at": "2019-10-28T16:00:08Z",
+        "activity_segment": "single_session",
+        "known_user": true
+      },
+      "history": [
+        {
+          "product_id": 42300006,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-28T16:00:08Z",
+          "last_interaction_at": "2019-10-28T16:00:08Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        }
+      ],
+      "validation_purchases": [
+        {
+          "product_id": 15200296,
+          "eligible": true,
+          "known_product": true,
+          "training_users": 1,
+          "first_purchase_at": "2019-11-20T03:40:46Z",
+          "history_relation": "no_prior_user_product_interaction"
+        }
+      ],
+      "recommendations": {
+        "popularity_purchase": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 398.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 287.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 184.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 152.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 5,
+            "score": 151.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 6,
+            "score": 138.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002633,
+            "rank": 10,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "popularity_interaction": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 4827.347646828981,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 4072.241703815691,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 3303.5534030098806,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 2241.3546166470637,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 5,
+            "score": 2182.1726329616813,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 6,
+            "score": 2149.669660455382,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 2118.2942806314427,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 1944.117581258319,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 1800.001789448301,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004836,
+            "rank": 10,
+            "score": 1494.2439353794657,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "item_cf": [
+          {
+            "product_id": 38900023,
+            "rank": 1,
+            "score": 0.04294934123754501,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.0619628019630909,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 42300027,
+            "rank": 2,
+            "score": 0.02646007388830185,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.03817381709814072,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 4
+            }
+          },
+          {
+            "product_id": 42300013,
+            "rank": 3,
+            "score": 0.024450205266475677,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.035274188965559006,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 3
+            }
+          },
+          {
+            "product_id": 42300004,
+            "rank": 4,
+            "score": 0.0220588780939579,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.03182423487305641,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 42300009,
+            "rank": 5,
+            "score": 0.01919795200228691,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.027696790173649788,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 42300019,
+            "rank": 6,
+            "score": 0.017718978226184845,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.025563081726431847,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 38900010,
+            "rank": 7,
+            "score": 0.01595108024775982,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.023012544959783554,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 42300032,
+            "rank": 8,
+            "score": 0.012392870150506496,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.01787913218140602,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 38900037,
+            "rank": 9,
+            "score": 0.012266022153198719,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.01769612915813923,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 3
+            }
+          },
+          {
+            "product_id": 38900030,
+            "rank": 10,
+            "score": 0.008472621440887451,
+            "source": "item_cf",
+            "reason_product_id": 42300006,
+            "reason_user_id": null,
+            "reason_similarity": 0.012223408557474613,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 42300006,
+              "seed_history": {
+                "product_id": 42300006,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-28T16:00:08Z",
+                "last_interaction_at": "2019-10-28T16:00:08Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          }
+        ],
+        "user_cf": [
+          {
+            "product_id": 42300006,
+            "rank": 1,
+            "score": 1.0774402618408203,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 561060068,
+            "reason_similarity": 0.5184224843978882,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 561060068,
+              "peer_candidate_history": {
+                "product_id": 42300006,
+                "event_count": 9,
+                "view_count": 9,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 4,
+                "first_interaction_at": "2019-10-23T10:43:53Z",
+                "last_interaction_at": "2019-10-26T17:02:25Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 2.302585092994046
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 42300027,
+            "rank": 2,
+            "score": 0.2724281847476959,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 514220067,
+            "reason_similarity": 0.3714214563369751,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 514220067,
+              "peer_candidate_history": {
+                "product_id": 42300027,
+                "event_count": 3,
+                "view_count": 3,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-26T12:43:00Z",
+                "last_interaction_at": "2019-11-01T13:41:20Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.3862943611198906
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 42300013,
+            "rank": 3,
+            "score": 0.2610829472541809,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 514220067,
+            "reason_similarity": 0.3714214563369751,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 514220067,
+              "peer_candidate_history": {
+                "product_id": 42300013,
+                "event_count": 5,
+                "view_count": 5,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 3,
+                "first_interaction_at": "2019-10-26T12:41:32Z",
+                "last_interaction_at": "2019-11-03T06:10:20Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.791759469228055
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 42300004,
+            "rank": 4,
+            "score": 0.2520314157009125,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 561060068,
+            "reason_similarity": 0.5184224843978882,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 561060068,
+              "peer_candidate_history": {
+                "product_id": 42300004,
+                "event_count": 3,
+                "view_count": 3,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 3,
+                "first_interaction_at": "2019-10-23T10:43:19Z",
+                "last_interaction_at": "2019-10-26T17:02:19Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.3862943611198906
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 12701967,
+            "rank": 5,
+            "score": 0.23297815024852753,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 527980035,
+            "reason_similarity": 0.1495516449213028,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 527980035,
+              "peer_candidate_history": {
+                "product_id": 12701967,
+                "event_count": 3,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 1,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-12T19:16:17Z",
+                "last_interaction_at": "2019-10-13T04:52:42Z",
+                "cart_flag": false,
+                "purchase_flag": true,
+                "interaction_score": 6.09861228866811
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 42300036,
+            "rank": 6,
+            "score": 0.2084656059741974,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 514220067,
+            "reason_similarity": 0.3714214563369751,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 514220067,
+              "peer_candidate_history": {
+                "product_id": 42300036,
+                "event_count": 8,
+                "view_count": 8,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 6,
+                "first_interaction_at": "2019-10-26T12:39:24Z",
+                "last_interaction_at": "2019-11-04T10:49:05Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 2.1972245773362196
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 38900037,
+            "rank": 7,
+            "score": 0.18458931148052216,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 561060068,
+            "reason_similarity": 0.5184224843978882,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 561060068,
+              "peer_candidate_history": {
+                "product_id": 38900037,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-26T13:19:10Z",
+                "last_interaction_at": "2019-10-26T13:19:10Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 14701835,
+            "rank": 8,
+            "score": 0.18358291685581207,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 561060068,
+            "reason_similarity": 0.5184224843978882,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 561060068,
+              "peer_candidate_history": {
+                "product_id": 14701835,
+                "event_count": 3,
+                "view_count": 3,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-23T10:47:51Z",
+                "last_interaction_at": "2019-10-26T13:18:54Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.3862943611198906
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 42300019,
+            "rank": 9,
+            "score": 0.1817181557416916,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 514220067,
+            "reason_similarity": 0.3714214563369751,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 514220067,
+              "peer_candidate_history": {
+                "product_id": 42300019,
+                "event_count": 3,
+                "view_count": 3,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-11-04T09:24:46Z",
+                "last_interaction_at": "2019-11-05T15:19:12Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.3862943611198906
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          },
+          {
+            "product_id": 1004229,
+            "rank": 10,
+            "score": 0.15856434404850006,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 551630086,
+            "reason_similarity": 0.06241199001669884,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 551630086,
+              "peer_candidate_history": {
+                "product_id": 1004229,
+                "event_count": 10,
+                "view_count": 6,
+                "cart_count": 2,
+                "purchase_count": 2,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-17T10:23:11Z",
+                "last_interaction_at": "2019-11-06T11:05:18Z",
+                "cart_flag": true,
+                "purchase_flag": true,
+                "interaction_score": 9.945910149055313
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                42300006
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "cold_miss",
+      "label_zh": "都没命中：商品在训练中从未出现",
+      "user_id": 517450032,
+      "historical_summary": {
+        "user_id": 517450032,
+        "event_count": 1,
+        "session_count": 1,
+        "unique_product_count": 1,
+        "active_day_count": 1,
+        "view_count": 1,
+        "cart_count": 0,
+        "purchase_count": 0,
+        "first_event_at": "2019-10-07T14:23:57Z",
+        "last_event_at": "2019-10-07T14:23:57Z",
+        "activity_segment": "single_session",
+        "known_user": true
+      },
+      "history": [
+        {
+          "product_id": 5100338,
+          "event_count": 1,
+          "view_count": 1,
+          "cart_count": 0,
+          "purchase_count": 0,
+          "session_count": 1,
+          "first_interaction_at": "2019-10-07T14:23:57Z",
+          "last_interaction_at": "2019-10-07T14:23:57Z",
+          "cart_flag": false,
+          "purchase_flag": false,
+          "interaction_score": 0.6931471805599453
+        }
+      ],
+      "validation_purchases": [
+        {
+          "product_id": 100006210,
+          "eligible": true,
+          "known_product": false,
+          "training_users": 0,
+          "first_purchase_at": "2019-11-17T08:20:36Z",
+          "history_relation": "no_prior_user_product_interaction"
+        }
+      ],
+      "recommendations": {
+        "popularity_purchase": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 398.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 287.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 184.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 152.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 5,
+            "score": 151.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 6,
+            "score": 138.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 120.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002633,
+            "rank": 10,
+            "score": 103.0,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "popularity_interaction": [
+          {
+            "product_id": 1004856,
+            "rank": 1,
+            "score": 4827.347646828981,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004767,
+            "rank": 2,
+            "score": 4072.241703815691,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005115,
+            "rank": 3,
+            "score": 3303.5534030098806,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004833,
+            "rank": 4,
+            "score": 2241.3546166470637,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1002544,
+            "rank": 5,
+            "score": 2182.1726329616813,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004870,
+            "rank": 6,
+            "score": 2149.669660455382,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1005105,
+            "rank": 7,
+            "score": 2118.2942806314427,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004249,
+            "rank": 8,
+            "score": 1944.117581258319,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 4804056,
+            "rank": 9,
+            "score": 1800.001789448301,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          },
+          {
+            "product_id": 1004836,
+            "rank": 10,
+            "score": 1494.2439353794657,
+            "source": "global_popularity",
+            "reason_product_id": null,
+            "reason_user_id": null,
+            "reason_similarity": null,
+            "hit": false,
+            "evidence": null
+          }
+        ],
+        "item_cf": [
+          {
+            "product_id": 5100562,
+            "rank": 1,
+            "score": 0.022875986993312836,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0330030731856823,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 6
+            }
+          },
+          {
+            "product_id": 5100337,
+            "rank": 2,
+            "score": 0.005005136132240295,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0072208852507174015,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 6
+            }
+          },
+          {
+            "product_id": 5100610,
+            "rank": 3,
+            "score": 0.0024688614066690207,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.003561814082786441,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 3
+            }
+          },
+          {
+            "product_id": 5100567,
+            "rank": 4,
+            "score": 0.00204935553483665,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0029565950389951468,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 5100853,
+            "rank": 5,
+            "score": 0.001150651485659182,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0016600391827523708,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 4802036,
+            "rank": 6,
+            "score": 0.000911158334929496,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0013145236298441887,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 1005129,
+            "rank": 7,
+            "score": 0.0007050404674373567,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0010171583853662014,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 5100566,
+            "rank": 8,
+            "score": 0.0006296322681009769,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0009083673357963562,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 5100572,
+            "rank": 9,
+            "score": 0.0005200160085223615,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0007502245134674013,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          },
+          {
+            "product_id": 4804055,
+            "rank": 10,
+            "score": 0.0005016997456550598,
+            "source": "item_cf",
+            "reason_product_id": 5100338,
+            "reason_user_id": null,
+            "reason_similarity": 0.0007237997488118708,
+            "hit": false,
+            "evidence": {
+              "seed_product_id": 5100338,
+              "seed_history": {
+                "product_id": 5100338,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-07T14:23:57Z",
+                "last_interaction_at": "2019-10-07T14:23:57Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "common_users": 2
+            }
+          }
+        ],
+        "user_cf": [
+          {
+            "product_id": 5100338,
+            "rank": 1,
+            "score": 0.9554450511932373,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 560580039,
+            "reason_similarity": 1.0,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 560580039,
+              "peer_candidate_history": {
+                "product_id": 5100338,
+                "event_count": 4,
+                "view_count": 4,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-15T17:54:09Z",
+                "last_interaction_at": "2019-10-15T18:07:21Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.6094379124341003
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 5100562,
+            "rank": 2,
+            "score": 0.11574409902095795,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 556850007,
+            "reason_similarity": 0.29799455404281616,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 556850007,
+              "peer_candidate_history": {
+                "product_id": 5100562,
+                "event_count": 4,
+                "view_count": 3,
+                "cart_count": 1,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-04T20:22:33Z",
+                "last_interaction_at": "2019-10-10T10:22:52Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.386294361119891
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 5100337,
+            "rank": 3,
+            "score": 0.08116904646158218,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 564590016,
+            "reason_similarity": 0.7837350964546204,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 564590016,
+              "peer_candidate_history": {
+                "product_id": 5100337,
+                "event_count": 2,
+                "view_count": 2,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-27T06:19:50Z",
+                "last_interaction_at": "2019-10-30T09:11:38Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.0986122886681098
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 4804056,
+            "rank": 4,
+            "score": 0.04538543149828911,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 556430076,
+            "reason_similarity": 0.2890741229057312,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 556430076,
+              "peer_candidate_history": {
+                "product_id": 4804056,
+                "event_count": 4,
+                "view_count": 2,
+                "cart_count": 2,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-03T14:52:24Z",
+                "last_interaction_at": "2019-10-03T14:59:42Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.09861228866811
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 5100610,
+            "rank": 5,
+            "score": 0.03437921032309532,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 516790024,
+            "reason_similarity": 0.12373892962932587,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 516790024,
+              "peer_candidate_history": {
+                "product_id": 5100610,
+                "event_count": 6,
+                "view_count": 4,
+                "cart_count": 2,
+                "purchase_count": 0,
+                "session_count": 2,
+                "first_interaction_at": "2019-10-25T05:25:43Z",
+                "last_interaction_at": "2019-10-26T05:02:07Z",
+                "cart_flag": true,
+                "purchase_flag": false,
+                "interaction_score": 4.6094379124341005
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 1004249,
+            "rank": 6,
+            "score": 0.03336594998836517,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 522800080,
+            "reason_similarity": 0.7071067690849304,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 522800080,
+              "peer_candidate_history": {
+                "product_id": 1004249,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-11-03T19:20:47Z",
+                "last_interaction_at": "2019-11-03T19:20:47Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 4802036,
+            "rank": 7,
+            "score": 0.028679123148322105,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 556430076,
+            "reason_similarity": 0.2890741229057312,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 556430076,
+              "peer_candidate_history": {
+                "product_id": 4802036,
+                "event_count": 4,
+                "view_count": 4,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-03T14:51:59Z",
+                "last_interaction_at": "2019-10-03T14:59:50Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 1.6094379124341003
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 1005115,
+            "rank": 8,
+            "score": 0.026063768193125725,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 513220085,
+            "reason_similarity": 0.4773591160774231,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 513220085,
+              "peer_candidate_history": {
+                "product_id": 1005115,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-08T07:49:40Z",
+                "last_interaction_at": "2019-10-08T07:49:40Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 5100853,
+            "rank": 9,
+            "score": 0.025625187903642654,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 547130051,
+            "reason_similarity": 0.7071067690849304,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 547130051,
+              "peer_candidate_history": {
+                "product_id": 5100853,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-11-04T13:51:40Z",
+                "last_interaction_at": "2019-11-04T13:51:40Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          },
+          {
+            "product_id": 1003317,
+            "rank": 10,
+            "score": 0.024785999208688736,
+            "source": "user_cf",
+            "reason_product_id": null,
+            "reason_user_id": 539720082,
+            "reason_similarity": 0.7071067690849304,
+            "hit": false,
+            "evidence": {
+              "peer_user_id": 539720082,
+              "peer_candidate_history": {
+                "product_id": 1003317,
+                "event_count": 1,
+                "view_count": 1,
+                "cart_count": 0,
+                "purchase_count": 0,
+                "session_count": 1,
+                "first_interaction_at": "2019-10-05T03:40:53Z",
+                "last_interaction_at": "2019-10-05T03:40:53Z",
+                "cart_flag": false,
+                "purchase_flag": false,
+                "interaction_score": 0.6931471805599453
+              },
+              "shared_product_count": 1,
+              "shared_product_ids_sample": [
+                5100338
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

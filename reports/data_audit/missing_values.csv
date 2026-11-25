@@ -1,0 +1,12 @@
+column,null_count,null_rate
+category_code,353480,0.32279008690713074
+brand,153419,0.14009882410095365
+event_time,0,0.0
+event_type,0,0.0
+product_id,0,0.0
+category_id,0,0.0
+price,0,0.0
+user_id,0,0.0
+user_session,0,0.0
+source_file,0,0.0
+event_at_parse_failed,0,0.0

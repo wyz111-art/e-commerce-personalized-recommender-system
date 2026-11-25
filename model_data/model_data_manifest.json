@@ -1,0 +1,199 @@
+{
+  "input": "D:\\user_behavior\\processed\\clean_events_2019_10_11_1pct.parquet",
+  "input_sha256": "4d51a90d4c69cc7783e908e4bb068019ae9b8c5d9efc31b18e07b86d79a221fa",
+  "polars_version": "1.44.2",
+  "input_quality": {
+    "rows": 1093742,
+    "missing_required_rows": 0,
+    "invalid_event_rows": 0,
+    "outside_time_range_rows": 0,
+    "min_time_utc": "2019-10-01 00:08:55",
+    "max_time_utc": "2019-11-30 23:58:29"
+  },
+  "timezone": "UTC; naive event_at is interpreted as UTC, not local time",
+  "task": "Fixed cutoff user-level prediction of purchases in the next evaluation window",
+  "split": {
+    "train": "2019-10-01 <= event_at < 2019-11-11",
+    "validation": "2019-11-11 <= event_at < 2019-11-21",
+    "test_history": "2019-10-01 <= event_at < 2019-11-21",
+    "test": "2019-11-21 <= event_at < 2019-12-01"
+  },
+  "score": {
+    "formula": "view_weight*ln(1+view_count)+cart_weight*cart_flag+purchase_weight*purchase_flag",
+    "view_weight": 1.0,
+    "cart_weight": 3.0,
+    "purchase_weight": 5.0,
+    "status": "initial defaults, not validated as optimal"
+  },
+  "policy": {
+    "low_activity_users_removed": false,
+    "rare_products_removed": false,
+    "prior_purchase_targets_removed": false,
+    "cold_start_targets_removed": false,
+    "full_period_brand_category_features_used": false
+  },
+  "validation": {
+    "history_events": 597412,
+    "history_users": 38155,
+    "history_products": 58663,
+    "history_user_product_pairs": 323383,
+    "purchase_events": 4201,
+    "purchase_sessions": 3517,
+    "purchase_users": 2388,
+    "purchased_products": 1867,
+    "target_user_product_pairs": 3513,
+    "known_purchase_users": 1652,
+    "known_purchased_products": 1675,
+    "new_purchase_target_pairs": 3328,
+    "unseen_target_pairs": 2982,
+    "prior_user_product_breakdown": [
+      {
+        "prior_user_product_segment": "no_prior_user_product_interaction",
+        "user_product_pairs": 2982,
+        "purchase_events": 3416
+      },
+      {
+        "prior_user_product_segment": "prior_cart_only",
+        "user_product_pairs": 41,
+        "purchase_events": 45
+      },
+      {
+        "prior_user_product_segment": "prior_purchase",
+        "user_product_pairs": 185,
+        "purchase_events": 343
+      },
+      {
+        "prior_user_product_segment": "prior_view_only",
+        "user_product_pairs": 305,
+        "purchase_events": 397
+      }
+    ],
+    "cold_start_breakdown": [
+      {
+        "cold_start_segment": "known_user_known_product",
+        "user_product_pairs": 2373,
+        "purchase_events": 2882
+      },
+      {
+        "cold_start_segment": "known_user_new_product",
+        "user_product_pairs": 156,
+        "purchase_events": 185
+      },
+      {
+        "cold_start_segment": "new_user_known_product",
+        "user_product_pairs": 946,
+        "purchase_events": 1096
+      },
+      {
+        "cold_start_segment": "new_user_new_product",
+        "user_product_pairs": 38,
+        "purchase_events": 38
+      }
+    ],
+    "checks_passed": true
+  },
+  "test": {
+    "history_events": 927950,
+    "history_users": 46751,
+    "history_products": 74718,
+    "history_user_product_pairs": 479478,
+    "purchase_events": 2549,
+    "purchase_sessions": 2162,
+    "purchase_users": 1355,
+    "purchased_products": 1122,
+    "target_user_product_pairs": 1976,
+    "known_purchase_users": 993,
+    "known_purchased_products": 1044,
+    "new_purchase_target_pairs": 1816,
+    "unseen_target_pairs": 1581,
+    "prior_user_product_breakdown": [
+      {
+        "prior_user_product_segment": "no_prior_user_product_interaction",
+        "user_product_pairs": 1581,
+        "purchase_events": 1914
+      },
+      {
+        "prior_user_product_segment": "prior_cart_only",
+        "user_product_pairs": 61,
+        "purchase_events": 78
+      },
+      {
+        "prior_user_product_segment": "prior_purchase",
+        "user_product_pairs": 160,
+        "purchase_events": 338
+      },
+      {
+        "prior_user_product_segment": "prior_view_only",
+        "user_product_pairs": 174,
+        "purchase_events": 219
+      }
+    ],
+    "cold_start_breakdown": [
+      {
+        "cold_start_segment": "known_user_known_product",
+        "user_product_pairs": 1424,
+        "purchase_events": 1881
+      },
+      {
+        "cold_start_segment": "known_user_new_product",
+        "user_product_pairs": 57,
+        "purchase_events": 62
+      },
+      {
+        "cold_start_segment": "new_user_known_product",
+        "user_product_pairs": 472,
+        "purchase_events": 582
+      },
+      {
+        "cold_start_segment": "new_user_new_product",
+        "user_product_pairs": 23,
+        "purchase_events": 24
+      }
+    ],
+    "checks_passed": true
+  },
+  "outputs": {
+    "train_interactions.parquet": {
+      "rows": 323383,
+      "bytes": 4834460
+    },
+    "train_user_history_summary.parquet": {
+      "rows": 38155,
+      "bytes": 593743
+    },
+    "train_product_history_summary.parquet": {
+      "rows": 58663,
+      "bytes": 815779
+    },
+    "validation_targets.parquet": {
+      "rows": 3513,
+      "bytes": 73479
+    },
+    "validation_user_segments.parquet": {
+      "rows": 2388,
+      "bytes": 44426
+    },
+    "test_history_interactions.parquet": {
+      "rows": 479478,
+      "bytes": 7186679
+    },
+    "test_user_history_summary.parquet": {
+      "rows": 46751,
+      "bytes": 741174
+    },
+    "test_product_history_summary.parquet": {
+      "rows": 74718,
+      "bytes": 1057081
+    },
+    "test_targets.parquet": {
+      "rows": 1976,
+      "bytes": 46654
+    },
+    "test_user_segments.parquet": {
+      "rows": 1355,
+      "bytes": 29622
+    }
+  },
+  "checks": "History/target counts, unique keys, temporal boundaries, stored row counts and schemas passed",
+  "elapsed_seconds": 0.971
+}

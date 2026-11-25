@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>匿名访客推荐工作台</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div><p class="eyebrow">RECOMMENDATION LAB / FINAL TEST</p><h1>匿名访客推荐工作台</h1><p class="lede">用同一个用户，比较 Item-CF、User-CF 与两路融合如何理解他的历史行为。</p></div>
+      <div class="cutoff"><span>推荐截点</span><strong>2019-11-21 00:00 UTC</strong><small>后续购买只用于离线核对</small></div>
+    </header>
+    <main>
+      <section class="control-band">
+        <div class="control-copy"><span class="section-kicker">01 / 选择访客</span><h2>输入一个匿名用户 ID</h2><p>榜单来自最终测试集的固定模型结果，不会在浏览器中重新训练。</p></div>
+        <div class="search-wrap"><label for="userInput">用户 ID</label><div class="search-line"><input id="userInput" autocomplete="off" placeholder="例如 565270076"><button id="loadBtn" type="button">查看推荐</button></div><div id="suggestions" class="suggestions" hidden></div><p id="searchHint" class="hint"></p></div>
+        <div class="example-wrap"><span>快速查看案例</span><div id="exampleButtons" class="example-buttons"></div></div>
+      </section>
+      <section id="emptyState" class="empty-state"><div class="empty-mark">ID</div><h2>选择一个访客，开始看推荐路径</h2><p>你会看到他的历史行为、三种模型的 Top 10、推荐依据，以及测试窗口内实际发生的购买。</p></section>
+      <section id="dashboard" hidden>
+        <div class="user-strip"><div><span class="section-kicker">02 / 用户画像</span><div class="identity"><h2 id="userTitle"></h2><span id="segmentBadge" class="badge"></span></div></div><div id="userStats" class="stat-row"></div></div>
+        <div class="dashboard-grid">
+          <aside class="history-panel panel"><div class="panel-head"><div><span class="section-kicker">历史行为</span><h3>截点前的交互</h3></div><span id="historyCount" class="muted"></span></div><div id="historyList" class="history-list"></div></aside>
+          <section class="recommend-panel"><div class="panel-head"><div><span class="section-kicker">03 / 个性化结果</span><h3>模型推荐 Top 10</h3></div><div class="view-switch" id="modelSwitch"></div></div><div class="model-explainer" id="modelExplainer"></div><div id="recommendations" class="recommendations"></div></section>
+          <aside class="outcome-panel panel"><div class="panel-head"><div><span class="section-kicker">04 / 离线核对</span><h3>后续实际购买</h3></div><span class="muted">11.21–11.30</span></div><div id="purchaseList" class="purchase-list"></div><div class="note-box">购买记录只作为测试答案。历史已购买或已加购的商品不会出现在推荐榜中。</div></aside>
+        </div>
+      </section>
+      <section class="metrics-band"><div class="metrics-heading"><span class="section-kicker">05 / 整体表现</span><h2>最终测试集模型对照</h2><p>离线指标按用户取平均，不代表线上转化率。</p></div><div id="metricCards" class="metric-cards"></div></section>
+    </main>
+    <footer><span>Retailrocket / anonymous behavioral data</span><span>排序分数不是购买概率 · 商品 ID 保持匿名</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

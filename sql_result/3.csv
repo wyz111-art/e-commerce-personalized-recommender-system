@@ -1,0 +1,5 @@
+"cold_start_segment","purchase_event_count","purchase_user_count","purchased_product_count","purchase_session_count","purchase_event_share"
+老用户+老商品,1881,968,874,1618,0.73793644566496665358
+新用户+老商品,582,351,287,479,0.22832483326794821498
+老用户+新商品,62,51,55,59,0.02432326402510788544
+新用户+新商品,24,20,23,22,0.00941545704197724597

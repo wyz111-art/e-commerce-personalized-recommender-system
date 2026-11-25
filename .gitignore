@@ -16,5 +16,6 @@ dataset/
 *.pth
 *.pkl
 *.parquet
-processed/clean_events_2019_10_11_1pct.csv
+
+# 只忽略processed整个文件夹
 processed/
